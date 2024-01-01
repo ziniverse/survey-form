@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+   <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id ="title">Survey Form</h1>
+    <p id="description">Cusomer Survey</p>
+    <form id="survey-form">
+      <fieldset>
+        <label id="name-label" for="name">Enter Your Name: <input id="name" name="name-label" type="text" required placeholder="Firstname Lastname"/></label>
+        <label id="email-label" for="email">Enter Your Email: <input id="email" name="email-label" type="email" required placeholder="firstname.lastname@email.com" /></label>
+        <label id="number-label" for="number">Enter your age: <input id="number" type="number" name="number-label" min="13" max="120" placeholder="24" /></label>
+        </fieldset>
+        <fieldset>
+        <label id="occupation" for="occupation">Which option best describes your current role?
+          <select id="dropdown" name="dropdown">
+            <option value="">(select one)</option>
+            <option value="1">Student</option>
+            <option value="2">Full-time Job</option>
+            <option value="3">Full-time learner</option>
+            <option value="4">Prefer not to say</option>
+            <option value="5">Other</option>
+            </select>
+            </label>
+            </fieldset>
+            <fieldset>
+            <p1 id="gender">Gender:</p1>
+<label for="male"><input id="male" type="radio" name="gender" value="male" class="inline" /> Male</label>
+<label for="female"><input id="female" type="radio" name="gender" value="female" class="inline" /> Female</label>
+<label for="other"><input id="other" type="radio" name="gender" value="other" class="inline" /> Other</label>
+<label for="prefer-not-to-say"><input id="prefer-not-to-say" type="radio" name="gender" value="prefer-not-to-say" class="inline" /> Prefer not to say</label>
+
+        </fieldset>
+        <fieldset>
+            <p2>Are you a regular customer?</p2>
+            <label for="yes"><input id="yes" type="radio" name="pets" value="yes" class="inline" /> Yes</label>
+            <label for="no"><input id="no" type="radio" name="pets" value="no" class="inline" /> No</label>
+        </fieldset>
+        <fieldset>
+        <p3 id="hobbies">What products have you purchased from us?</p3>
+        <label for="exercising"><input id="exercising" type="checkbox" name="exercising" class="inline" value="exercising" />Exercising equipment</label>
+        <label for="cooking"><input id="cooking" type="checkbox" name="cooking" class="inline" value="cooking" />Cooking utensils</label>
+        <label for="drawing"><input id="drawing" type="checkbox" name="drawing" class="inline" value="drawing"/>Drawing materials</label>
+        <label for="reading"><input id="reading" type="checkbox" name="reading" class="inline" value="reading" />Technical Devices(mobiles, laptops, etc)</label>
+        <label for="writing"><input id="writing" type="checkbox" name="writing" class="inline" value="writing" />Clothing</label>
+        <label for="Other"><input id="Other" type="checkbox" name="Other" class="inline" value="Other" />Other</label>
+        <label for="Nothing"><input id="Nothing" type="checkbox" name="Nothing" class="inline" value="Nothing" />Other</label>
+        </fieldset>
+        <fieldset>
+          <p4 id="quality">How did you find the quality of our products?</p4>
+          <label for="excellent"><input id="excellent" type="radio" name="product-quality" value="excellent" class="inline" /> Excellent</label>
+          <label for="good"><input id="good" type="radio" name="product-quality" value="good" class="inline" /> Good</label>
+          <label for="average"><input id="average" type="radio" name="product-quality" value="average" class="inline" /> Average</label>
+          <label for="poor"><input id="poor" type="radio" name="product-quality" value="poor" class="inline" /> Poor</label>
+          <!-- Question about customer service -->
+<p5 id="service">How would you rate our customer service?</p5>
+<label for="excellent-service"><input id="excellent-service" type="radio" name="customer-service" value="excellent" class="inline" /> Excellent</label>
+<label for="good-service"><input id="good-service" type="radio" name="customer-service" value="good" class="inline" /> Good</label>
+<label for="average-service"><input id="average-service" type="radio" name="customer-service" value="average" class="inline" /> Average</label>
+<label for="poor-service"><input id="poor-service" type="radio" name="customer-service" value="poor" class="inline" /> Poor</label>
+
+         <label for="bio">Please give us some feedback and any improvements you would like to see.
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I love your products..."></textarea>
+        </label>
+        <input id="submit" type="submit" value="Submit" />
+
+
+          </form>
+          <div id="thankyou-message" style="display:none; text-align:center;">
+            <h2>Thank you for participating in the survey!</h2>
+          </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", function(){
+              // Get form and thank-you message elements
+              var form = document.getElementById('survey-form');
+              var thankyou = document.getElementById('thankyou-message');
+          
+              form.onsubmit = function(event) {
+                // Prevent the default form submit action (page refresh)
+                event.preventDefault();
+          
+                // Hide the form
+                form.style.display = 'none';
+          
+                // Show the thank-you message
+                thankyou.style.display = 'block';
+              };
+            });
+          </script>
+        </body>
+      </html>
